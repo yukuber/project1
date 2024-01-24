@@ -76,7 +76,7 @@ class d1 //класс одномерного массива
         
     public void pop100() //удаление всех чисел больше 100 по модулю
     {
-    Console.WriteLine("укороченный");
+        Console.WriteLine("укороченный");
         int kor_len = 0;
         int j = 0;
         foreach(int elem in array)
@@ -93,12 +93,11 @@ class d1 //класс одномерного массива
             {
                 kor_array[j] = l;
                 j ++;
-            }
-                
-        for (int i = 0; i< kor_array.Length;i++)
-            {
-                Console.Write(kor_array[i] + ", ");
-            }
+            }  
+            for (int i = 0; i< kor_array.Length;i++)
+                {
+                    Console.Write(kor_array[i] + ", ");
+                }
             Console.WriteLine();
         }
     }
@@ -189,30 +188,42 @@ class d3
     public d3(int high_d3, bool fill_rand)
     {
         array3 = new int[high_d3][];
-         if (fill_rand == true)
+        if (fill_rand == true)
         {
             Random rnd = new Random();
-            for (int i = 0; i < high_d2; i++)
+            for (int i = 0; i < high_d3; i++)
             {
-                for (int j = 0; j < len_d2; j++)
+                for (int j = 0; j < rnd.Nex(1, 10); j++)
                 {
-                    array2[i, j] = rnd.Next(-100,100);
+                    array3[i][j] = rnd.Next(-100,100);
                 }
             }
         }
         else
         {
-            for (int i = 0; i < high_d2; i++)
+            for (int i = 0; i < high_d3 ; i++)
             {
-                for (int j = 0; j < len_d2; j++)
+                Console.WriteLine($"Введите длину подмассива {i}");
+                int len_each_d3 = int.parse(Console.ReadLine());
+                for (int j = 0; j < len_each_d3 ; j++)
                 {
-                    Console.Write($"Элемент [{i},{j}]: ");
-                    array2[i, j] = Convert.ToInt32(Console.ReadLine());
+                    Console.Write($"Элемент [{i}],[{j}]: ");
+                    array3[i],[j] = int.parse(Console.ReadLine());
                 }    
             }
         }
     }
-
+    public void average_d3()
+    {
+        int sum = 0;
+        for (i=0; i<high_d3; i++)
+        {
+            for (j=0; j< array3.Length[i]; j++)
+            {
+                sum+=j;
+            }
+        }
+    }
 }
 
 
