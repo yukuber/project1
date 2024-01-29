@@ -6,7 +6,7 @@ class HelloWorld
         bool fill_rand = false;
         Console.WriteLine("Заполнять все массивы рандомно? да или нет");
         string ans = Console.ReadLine();
-        if (ans == "lf")
+        if (ans == "да")
         {
             fill_rand = true;
         }
@@ -29,6 +29,7 @@ class HelloWorld
 
         Console.WriteLine("Введите количестово массивов в ступенчатом массиве");
         
+        int high_d3 = int.Parse(Console.ReadLine());
         d3 array3 = new d3(high_d3, fill_rand);
 
     }
@@ -193,7 +194,7 @@ class d3
             Random rnd = new Random();
             for (int i = 0; i < high_d3; i++)
             {
-                for (int j = 0; j < rnd.Nex(1, 10); j++)
+                for (int j = 0; j < rnd.Next(1, 10); j++)
                 {
                     array3[i][j] = rnd.Next(-100,100);
                 }
@@ -204,26 +205,26 @@ class d3
             for (int i = 0; i < high_d3 ; i++)
             {
                 Console.WriteLine($"Введите длину подмассива {i}");
-                int len_each_d3 = int.parse(Console.ReadLine());
+                int len_each_d3 = int.Parse(Console.ReadLine());
                 for (int j = 0; j < len_each_d3 ; j++)
                 {
                     Console.Write($"Элемент [{i}],[{j}]: ");
-                    array3[i],[j] = int.parse(Console.ReadLine());
+                    array3[i][j] = int.Parse(Console.ReadLine());
                 }    
             }
         }
     }
-    public void average_d3()
-    {
-        int sum = 0;
-        for (i=0; i<high_d3; i++)
-        {
-            for (j=0; j< array3.Length[i]; j++)
-            {
-                sum+=j;
-            }
-        }
-    }
+//     public void average_d3()
+//     {
+//         int sum = 0;
+//         for (i=0; i<high_d3; i++)
+//         {
+//             for (j=0; j< array3.Length[i]; j++)
+//             {
+//                 sum+=j;
+//             }
+//         }
+//     }
 }
 
 
