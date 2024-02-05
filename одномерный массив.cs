@@ -3,7 +3,7 @@ class d1 //класс одномерного массива
 {
     private int len_d1; //длина массива
     private int[] array;
-    public d1 (int len_d1, bool fill_rand)
+    public d1 (int len_d1)
     {
         array = new int[len_d1];
         

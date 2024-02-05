@@ -3,13 +3,14 @@ using System;
 class d3
 {
     private int high_d3;
+
     private int[][] array3;
-    public d3(int high_d3, bool fill_rand)
+    public d3(int high_d3)
     {
         array3 = new int[high_d3][];
-        if (fill_rand == true)
-        {
-            Random rnd = new Random();
+    }
+    public void d3_rand(int high_d3)
+    {       Random rnd = new Random();
             for (int i = 0; i < high_d3; i++)
             {
                 for (int j = 0; j < rnd.Next(1, 10); j++)
@@ -18,7 +19,7 @@ class d3
                 }
             }
         }
-        else
+       public void d3_manual(int high_d3)
         {
             for (int i = 0; i < high_d3 ; i++)
             {
@@ -31,7 +32,6 @@ class d3
                 }    
             }
         }
-    }
     public void average_d3()
     {
         int sum = 0;

@@ -3,11 +3,11 @@ class d2
     private int high_d2;
     private int len_d2;
     public int[,] array2;
-    public d2(int high_d2, int len_d2, bool fill_rand)
+    public d2(int high_d2, int len_d2)
     {
         array2 = new int[high_d2, len_d2];
     }
-    public d2_rand(int high_d2, int len_d2)
+    public void d2_rand(int high_d2, int len_d2)
     {
         Random rnd = new Random();
         for (int i = 0; i < high_d2; i++)
@@ -18,7 +18,7 @@ class d2
             }
         }
     }
-    public d2_manual(int high_d2, int len_d2)
+    public void d2_manual(int high_d2, int len_d2)
     {
 
         for (int i = 0; i < high_d2; i++)
