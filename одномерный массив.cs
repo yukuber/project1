@@ -2,7 +2,7 @@ using System;
 class d1 //класс одномерного массива
 {
     private int len_d1; //длина массива
-    public int[] array;
+    private int[] array;
     public d1 (int len_d1, bool fill_rand)
     {
         array = new int[len_d1];
@@ -17,7 +17,7 @@ class d1 //класс одномерного массива
         }
         print();
     }
-    public void d1_manual()
+    public void d1_manual(int len_d1)
     {
         for (int i = 0; i<len_d1; i++)
             {
