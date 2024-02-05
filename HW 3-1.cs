@@ -1,25 +1,4 @@
 using System;
-class HelloWorld
-{
-    static void Main()
-    {
-        Console.WriteLine("Введите длину одномерного массива:");
-        int a1 = int.Parse(Console.ReadLine());
-
-        bool fill_rand = false;
-        Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-            array1.d1_rand();
-        }
-        d1 array1= new d1(a1, fill_rand);
-
-        array1.average();
-        array1.pop100();
-    }
-}
 class d1 //класс одномерного массива
 {
     private int len_d1; //длина массива
@@ -29,7 +8,7 @@ class d1 //класс одномерного массива
         array = new int[len_d1];
         
     }
-    private d1_rand (int len_d1)
+    public void d1_rand (int len_d1)
     {
         Random rnd = new Random();
         for (int i = 0; i<len_d1;i++)
@@ -38,7 +17,7 @@ class d1 //класс одномерного массива
         }
         print();
     }
-    private d1_manual()
+    public void d1_manual()
     {
         for (int i = 0; i<len_d1; i++)
             {

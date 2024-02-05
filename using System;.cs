@@ -1,23 +1,6 @@
 using System;
-class HelloWorld
-{
-    static void Main()
-    {
-        bool fill_rand = false;
-        Console.WriteLine("Заполнять все массивы рандомно? да или нет");
-        string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
-        
-        Console.WriteLine("Введите количестово массивов в ступенчатом массиве");
-        
-        int high_d3 = int.Parse(Console.ReadLine());
-        d3 array3 = new d3(high_d3, fill_rand);
 
-    }
-}class d3
+class d3
 {
     private int high_d3;
     private int[][] array3;
