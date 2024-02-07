@@ -8,7 +8,7 @@ class d2
     {
         array2 = new int[high_d2, len_d2];
     }
-    public void d2_rand(int high_d2, int len_d2)
+    public void fill_rand(int high_d2, int len_d2)
     {
         Random rnd = new Random();
         for (int i = 0; i < high_d2; i++)

@@ -46,7 +46,7 @@ static void Main()
 
     if (fill_rand2)
     {
-        array2.d2_rand(high_d2,len_d2);
+        array2.fill_rand(high_d2,len_d2);
     }
     else
     {
