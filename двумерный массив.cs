@@ -1,3 +1,4 @@
+using System;
 class d2
 {
     private int high_d2;
