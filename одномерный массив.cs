@@ -1,5 +1,5 @@
 using System;
-sealed class d1 : massives //класс одномерного массива
+class d1 //класс одномерного массива
 {
     private int len_d1; //длина массива
     private int[] array;
