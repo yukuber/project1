@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-class two_dim
-=======
 using System;
-class d2
->>>>>>> 8041a8830f2b8175e26782e3c5a7cf50a6063e6c
+
 {
     private int high_d2;
     private int len_d2;
@@ -28,11 +24,8 @@ class d2
             d2_manual(high_d2, len_d2);
         }
     }
-<<<<<<< HEAD
+
     private void d2_rand(int high_d2, int len_d2)
-=======
-    public void fill_rand(int high_d2, int len_d2)
->>>>>>> 8041a8830f2b8175e26782e3c5a7cf50a6063e6c
     {
         Random rnd = new Random();
         for (int i = 0; i < array.GetLength(0); i++)
