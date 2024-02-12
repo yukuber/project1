@@ -1,4 +1,5 @@
 using System;
+
 static void Main()
 { 
     dim_one();
