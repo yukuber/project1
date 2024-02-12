@@ -1,25 +1,38 @@
 using System;
-class d1 //класс одномерного массива
+class one_dim //класс одномерного массива
 {
-    private int len_d1; //длина массива
+    private int len_one_dim; //длина массива
     private int[] array;
-    public d1 (int len_d1)
+    private bool fill_rand = false;
+    public one_dim (int len_one_dim)
     {
-        array = new int[len_d1];
-        
+        array = new int[len_one_dim];
+
+        Console.WriteLine("Заполнять массив рандомно? да или нет");
+        string ans = Console.ReadLine();
+            if (fill_rand)
+        {
+            one_dim_rand(len_one_dim);
+        }
+        else
+        {
+            one_dim_manual(len_one_dim);
+        }
     }
-    public void d1_rand (int len_d1)
+    
+    
+    private void one_dim_rand (int len_one_dim)
     {
         Random rnd = new Random();
-        for (int i = 0; i<len_d1;i++)
+        for (int i = 0; i<array.Length;i++)
         {
             array[i] = rnd.Next(-100,100);
         }
         print();
     }
-    public void d1_manual(int len_d1)
+    private void one_dim_manual(int len_one_dim)
     {
-        for (int i = 0; i<len_d1; i++)
+        for (int i = 0; i<array.Length; i++)
             {
                 Console.WriteLine($"значение {i}:");
                 int x = int.Parse(Console.ReadLine());

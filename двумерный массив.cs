@@ -1,24 +1,40 @@
-class d2
+class two_dim
 {
     private int high_d2;
     private int len_d2;
-    public int[,] array2;
-    public d2(int high_d2, int len_d2)
+    public int[,] array;
+    private bool fill_rand = false;
+    public two_dim(int high_d2, int len_d2)
     {
-        array2 = new int[high_d2, len_d2];
+        array = new int[high_d2, len_d2];
+
+        Console.WriteLine("Заполнять массив рандомно? да или нет");
+        string ans = Console.ReadLine();
+        if (ans == "да")
+        {
+            fill_rand = true;
+        }
+        if (fill_rand)
+        {
+            d2_rand(high_d2, len_d2);
+        }
+        else
+        {
+            d2_manual(high_d2, len_d2);
+        }
     }
-    public void d2_rand(int high_d2, int len_d2)
+    private void d2_rand(int high_d2, int len_d2)
     {
         Random rnd = new Random();
-        for (int i = 0; i < high_d2; i++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            for (int j = 0; j < len_d2; j++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
-                array2[i, j] = rnd.Next(-100, 100);
+                array[i, j] = rnd.Next(-100, 100);
             }
         }
     }
-    public void d2_manual(int high_d2, int len_d2)
+    private void d2_manual(int high_d2, int len_d2)
     {
 
         for (int i = 0; i < high_d2; i++)
@@ -26,7 +42,7 @@ class d2
             for (int j = 0; j < len_d2; j++)
             {
                 Console.Write($"Элемент [{i},{j}]: ");
-                array2[i, j] = Convert.ToInt32(Console.ReadLine());
+                array[i, j] = Convert.ToInt32(Console.ReadLine());
             }
         }
 
@@ -35,7 +51,7 @@ class d2
     public void average_d2()
     {
         int sam = 0;
-        foreach (int elem in array2)
+        foreach (int elem in array)
         {
             sam += elem;
         }
@@ -52,11 +68,11 @@ class d2
                 {
                     if (j == 0)
                     {
-                        Console.WriteLine($"{array2[i, j]}");
+                        Console.WriteLine($"{array[i, j]}");
                     }
                     else
                     {
-                        Console.Write($"{array2[i, j]}");
+                        Console.Write($"{array[i, j]}");
                     }
                 }
             }
@@ -66,11 +82,11 @@ class d2
                 {
                     if (j == -1)
                     {
-                        Console.WriteLine($"{array2[i, j]}");
+                        Console.WriteLine($"{array[i, j]}");
                     }
                     else
                     {
-                        Console.Write($"{array2[i, j]}");
+                        Console.Write($"{array[i, j]}");
                     }
                 }
             }
