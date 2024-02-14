@@ -36,9 +36,9 @@ using System;
     private void d2_manual(int high_d2, int len_d2)
     {
 
-        for (int i = 0; i < high_d2; i++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            for (int j = 0; j < len_d2; j++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
                 Console.Write($"Элемент [{i},{j}]: ");
                 array[i, j] = Convert.ToInt32(Console.ReadLine());
@@ -59,11 +59,11 @@ using System;
 
     public void obr_chet()
     {
-        for (int i = 0; i < high_d2; i++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
             if ((i + 1) % 2 == 0)
             {
-                for (int j = len_d2 - 1; j >= 0; j--)
+                for (int j = array.GetLength(1) - 1; j >= 0; j--)
                 {
                     if (j == 0)
                     {
@@ -77,7 +77,7 @@ using System;
             }
             else
             {
-                for (int j = 0; j < len_d2; j++)
+                for (int j = 0; j < array.GetLength(1); j++)
                 {
                     if (j == -1)
                     {

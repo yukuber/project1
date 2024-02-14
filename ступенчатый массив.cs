@@ -34,7 +34,7 @@ class three_dim
         }
        private void three_dim_manual(int high_three_dim)
         {
-            for (int i = 0; i < high_three_dim ; i++)
+            for (int i = 0; i < array3.Length ; i++)
             {
                 Console.WriteLine($"Введите длину подмассива {i}");
                 int len_each_three_dim = int.Parse(Console.ReadLine());
@@ -48,9 +48,9 @@ class three_dim
     public void average_three_dim()
     {
         int sum = 0;
-        for (int i = 0; i < high_three_dim; i++)
+        for (int i = 0; i < array3[i].Length; i++)
         {
-            for (int j = 0; j < array3[i].Length; j++)
+            for (int j = 0; j < array3[j].Length; j++)
             {
                 sum += j;
             }
