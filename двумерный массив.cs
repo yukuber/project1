@@ -57,7 +57,7 @@ using System;
         {
             sam += elem;
         }
-        Console.WriteLine($"средн арифм в двумерном массиве " + sam);
+        Console.WriteLine($"средн арифм в двумерном массиве " + sam/array.Length);
     }
 
     public void obr_chet()
