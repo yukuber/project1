@@ -12,10 +12,6 @@ class three_dim
 
         Console.WriteLine("Заполнять массив рандомно? да или нет");
         string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
 
         if (fill_rand)
         {
