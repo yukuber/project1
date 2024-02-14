@@ -11,10 +11,7 @@ using System;
 
         Console.WriteLine("Заполнять массив рандомно? да или нет");
         string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
+        
         if (fill_rand)
         {
             d2_rand(high_d2, len_d2);
