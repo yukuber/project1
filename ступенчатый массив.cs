@@ -65,13 +65,13 @@ class three_dim
             for (int j = 0; j < array3[i].Length; j++)
             {
                 sum += j;
-                Console.WriteLine($"среднее значение в подмассиве {i} = {sum}");
+                Console.WriteLine($"среднее значение в подмассиве {i} = {sum/array3[i].Length}");
             }
         }
     }
     public void muliply_three_dim()
     {
-        for (int i = 0; i < high_three_dim; i++)
+        for (int i = 0; i < array3.Length; i++)
         {
             for (int j = 0; j < array3[i].Length; j++)
             {
