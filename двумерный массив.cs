@@ -10,19 +10,19 @@ using System;
         array = new int[high_d2, len_d2];
 
         Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
+        fill_rand = Console.ReadLine();
         
         if (fill_rand)
         {
-            d2_rand(high_d2, len_d2);
+            d2_rand();
         }
         else
         {
-            d2_manual(high_d2, len_d2);
+            d2_manual();
         }
     }
 
-    private void d2_rand(int high_d2, int len_d2)
+    private void d2_rand()
     {
         Random rnd = new Random();
         for (int i = 0; i < array.GetLength(0); i++)
@@ -33,9 +33,8 @@ using System;
             }
         }
     }
-    private void d2_manual(int high_d2, int len_d2)
+    private void d2_manual()
     {
-
         for (int i = 0; i < array.GetLength(0); i++)
         {
             for (int j = 0; j < array.GetLength(1); j++)

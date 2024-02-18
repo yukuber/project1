@@ -11,20 +11,20 @@ class three_dim
         array3 = new int[high_three_dim][];
 
         Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
+        fill_rand = Console.ReadLine();
 
         if (fill_rand)
         {
-            three_dim_rand(high_three_dim);
+            three_dim_rand();
         }
         else
         {
-            three_dim_manual(high_three_dim);
+            three_dim_manual();
         }
     }
-    private void three_dim_rand(int high_three_dim)
+    private void three_dim_rand()
     {       Random rnd = new Random();
-            for (int i = 0; i < high_three_dim; i++)
+            for (int i = 0; i < array3.Length; i++)
             {
                 for (int j = 0; j < rnd.Next(1, 10); j++)
                 {
@@ -32,9 +32,9 @@ class three_dim
                 }
             }
         }
-       private void three_dim_manual(int high_three_dim)
+       private void three_dim_manual()
         {
-            for (int i = 0; i < array3.Length ; i++)
+            for (int i = 0; i < array3.Length; i++)
             {
                 Console.WriteLine($"Введите длину подмассива {i}");
                 int len_each_three_dim = int.Parse(Console.ReadLine());
@@ -48,9 +48,9 @@ class three_dim
     public void average_three_dim()
     {
         int sum = 0;
-        for (int i = 0; i < array3[i].Length; i++)
+        for (int i = 0; i < array3.Length; i++)
         {
-            for (int j = 0; j < array3[j].Length; j++)
+            for (int j = 0; j < array3[i].Length; j++)
             {
                 sum += j;
             }
@@ -59,7 +59,7 @@ class three_dim
     }
     public void average_each_three_dim()
     {
-        for (int i = 0; i < high_three_dim; i++)
+        for (int i = 0; i < array3.Length; i++)
         {
             int sum = 0;
             for (int j = 0; j < array3[i].Length; j++)

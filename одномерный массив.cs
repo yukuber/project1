@@ -8,29 +8,29 @@ class one_dim //класс одномерного массива
     {
         array = new int[len_one_dim];
 
-        Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
+        Console.WriteLine("Заполнять массив рандомно? true или false");
+        fill_rand = Console.ReadLine();
             if (fill_rand)
         {
-            one_dim_rand(len_one_dim);
+            one_dim_rand();
         }
         else
         {
-            one_dim_manual(len_one_dim);
+            one_dim_manual();
         }
+        print();
     }
     
     
-    private void one_dim_rand (int len_one_dim)
+    private void one_dim_rand ()
     {
         Random rnd = new Random();
         for (int i = 0; i<array.Length;i++)
         {
             array[i] = rnd.Next(-100,100);
         }
-        print();
     }
-    private void one_dim_manual(int len_one_dim)
+    private void one_dim_manual()
     {
         for (int i = 0; i<array.Length; i++)
             {
@@ -38,7 +38,6 @@ class one_dim //класс одномерного массива
                 int x = int.Parse(Console.ReadLine());
                 array[i] = x;
             }
-        print();
     }
 
     public void average() //вычисление среднего арифметического 
