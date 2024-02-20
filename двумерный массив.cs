@@ -10,8 +10,12 @@ using System;
         array = new int[high_d2, len_d2];
 
         Console.WriteLine("Заполнять массив рандомно? да или нет");
-        fill_rand = Console.ReadLine();
-        
+        string ans = Console.ReadLine();
+        if (ans == "да")
+        {
+            fill_rand = true;
+        }
+
         if (fill_rand)
         {
             d2_rand();
@@ -22,7 +26,7 @@ using System;
         }
     }
 
-    private void d2_rand()
+    private static void d2_rand()
     {
         Random rnd = new Random();
         for (int i = 0; i < array.GetLength(0); i++)
@@ -33,7 +37,7 @@ using System;
             }
         }
     }
-    private void d2_manual()
+    private static void d2_manual()
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {
@@ -46,7 +50,7 @@ using System;
 
     }
 
-    public void average_d2()
+    public static void average_d2()
     {
         int sam = 0;
         foreach (int elem in array)

@@ -8,9 +8,13 @@ class one_dim //класс одномерного массива
     {
         array = new int[len_one_dim];
 
-        Console.WriteLine("Заполнять массив рандомно? true или false");
-        fill_rand = Console.ReadLine();
-            if (fill_rand)
+        Console.WriteLine("Заполнять массив рандомно? да или нет");
+        string ans = Console.ReadLine();
+        if (ans == "да")
+        {
+            fill_rand = true;
+        }
+        if (fill_rand)
         {
             one_dim_rand();
         }

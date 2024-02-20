@@ -10,9 +10,13 @@ class three_dim
     {
         array3 = new int[high_three_dim][];
 
-        Console.WriteLine("Заполнять массив рандомно? да или нет");
-        fill_rand = Console.ReadLine();
-
+       Console.WriteLine("Заполнять массив рандомно? да или нет");
+        string ans = Console.ReadLine();
+        if (ans == "да")
+        {
+            fill_rand = true;
+        }
+        
         if (fill_rand)
         {
             three_dim_rand();
@@ -55,8 +59,9 @@ class three_dim
                 sum += j;
             }
         }
-        Console.WriteLine($"среднее значение в массиве {sum}");
+        Console.WriteLine($"среднее значение в массиве {sum/array3.Length}");
     }
+
     public void average_each_three_dim()
     {
         for (int i = 0; i < array3.Length; i++)
@@ -69,6 +74,7 @@ class three_dim
             }
         }
     }
+
     public void muliply_three_dim()
     {
         for (int i = 0; i < array3.Length; i++)
