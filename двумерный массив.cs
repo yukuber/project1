@@ -18,7 +18,7 @@ class two_dim
         }
     }
 
-    private static void d2_rand()
+    private void d2_rand()
     {
         Random rnd = new Random();
         for (int i = 0; i < array2.GetLength(0); i++)
@@ -29,7 +29,7 @@ class two_dim
             }
         }
     }
-    private static void d2_manual()
+    private void d2_manual()
     {
         for (int i = 0; i < array2.GetLength(0); i++)
         {
