@@ -1,20 +1,12 @@
 using System;
 
+class two_dim
 {
-    private int high_d2;
-    private int len_d2;
-    public int[,] array;
-    private bool fill_rand = false;
-    public two_dim(int high_d2, int len_d2)
-    {
-        array = new int[high_d2, len_d2];
+    private int[,] array2;
 
-        Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
+    public two_dim(int high_d2, int len_d2, bool fill_rand)
+    {
+        array2 = new int[high_d2, len_d2];
 
         if (fill_rand)
         {
@@ -29,22 +21,22 @@ using System;
     private static void d2_rand()
     {
         Random rnd = new Random();
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int i = 0; i < array2.GetLength(0); i++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (int j = 0; j < array2.GetLength(1); j++)
             {
-                array[i, j] = rnd.Next(-100, 100);
+                array2[i, j] = rnd.Next(-100, 100);
             }
         }
     }
     private static void d2_manual()
     {
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int i = 0; i < array2.GetLength(0); i++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (int j = 0; j < array2.GetLength(1); j++)
             {
                 Console.Write($"Элемент [{i},{j}]: ");
-                array[i, j] = Convert.ToInt32(Console.ReadLine());
+                array2[i, j] = Convert.ToInt32(Console.ReadLine());
             }
         }
 
@@ -53,42 +45,42 @@ using System;
     public static void average_d2()
     {
         int sam = 0;
-        foreach (int elem in array)
+        foreach (int elem in array2)
         {
             sam += elem;
         }
-        Console.WriteLine($"средн арифм в двумерном массиве " + sam/array.Length);
+        Console.WriteLine($"средн арифм в двумерном массиве " + sam/array2.Length);
     }
 
     public void obr_chet()
     {
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int i = 0; i < array2.GetLength(0); i++)
         {
             if ((i + 1) % 2 == 0)
             {
-                for (int j = array.GetLength(1) - 1; j >= 0; j--)
+                for (int j = array2.GetLength(1) - 1; j >= 0; j--)
                 {
                     if (j == 0)
                     {
-                        Console.WriteLine($"{array[i, j]}");
+                        Console.WriteLine($"{array2[i, j]}");
                     }
                     else
                     {
-                        Console.Write($"{array[i, j]}");
+                        Console.Write($"{array2[i, j]}");
                     }
                 }
             }
             else
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < array2.GetLength(1); j++)
                 {
                     if (j == -1)
                     {
-                        Console.WriteLine($"{array[i, j]}");
+                        Console.WriteLine($"{array2[i, j]}");
                     }
                     else
                     {
-                        Console.Write($"{array[i, j]}");
+                        Console.Write($"{array2[i, j]}");
                     }
                 }
             }

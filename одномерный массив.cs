@@ -1,19 +1,13 @@
 using System;
+using System.Linq;
 class one_dim //класс одномерного массива
 {
-    private int len_one_dim; //длина массива
     private int[] array;
-    private bool fill_rand = false;
-    public one_dim (int len_one_dim)
+
+    public one_dim (int len_one_dim, bool fill_rand)
     {
         array = new int[len_one_dim];
 
-        Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
         if (fill_rand)
         {
             one_dim_rand();
@@ -22,7 +16,6 @@ class one_dim //класс одномерного массива
         {
             one_dim_manual();
         }
-        print();
     }
     
     
@@ -55,11 +48,10 @@ class one_dim //класс одномерного массива
         Console.WriteLine(sam/array.Length);
     }
         
-    public void pop100() //удаление всех чисел больше 100 по модулю
+    public int[] pop100() //удаление всех чисел больше 100 по модулю
     {
         Console.WriteLine("укороченный");
         int kor_len = 0;
-        int j = 0;
         foreach(int elem in array)
         {
             if (Math.Abs(elem)<=100)
@@ -68,26 +60,27 @@ class one_dim //класс одномерного массива
             }
         }
         int[] kor_array = new int [kor_len];
-        foreach(int l in array)
-        {
-            if (Math.Abs(l) < 100)
-            {
-                kor_array[j] = l;
-                j ++;
-            }  
-            for (int i = 0; i< kor_array.Length;i++)
-            {
-                Console.Write(kor_array[i] + ", ");
-            }
-            Console.WriteLine();
-        }
+        return kor_array;
     }
-    public void print()
+    public int[] non_repeat()
     {
-        foreach (int i in array)
-        {
-            Console.Write(i+", ");
-        }
+        int[] unique = array.Distinct().ToArray();
+
+       
+        return unique;
+    }
+    public void print(int[] array, int[] kor_array, int[] unique)
+    {
+        
+        Console.WriteLine("изначальный массив");
+        Console.WriteLine(string.Join(" ", array));
+
+
+        Console.WriteLine("только элементы меньше 100");
+        Console.WriteLine(string.Join(" ", kor_array));
+
+        Console.WriteLine("массив без повторений");
+        Console.WriteLine(string.Join(" ", unique));
     }
 }
 

@@ -1,22 +1,12 @@
 using System;
 
 class three_dim
-{
-    private int high_three_dim;
+{    private int[][] array3;
 
-    private int[][] array3;
-    private bool fill_rand = false;
-    public three_dim(int high_three_dim)
+    public three_dim(int high_three_dim, bool fill_rand)
     {
         array3 = new int[high_three_dim][];
 
-       Console.WriteLine("Заполнять массив рандомно? да или нет");
-        string ans = Console.ReadLine();
-        if (ans == "да")
-        {
-            fill_rand = true;
-        }
-        
         if (fill_rand)
         {
             three_dim_rand();
