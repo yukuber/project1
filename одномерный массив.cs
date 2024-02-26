@@ -53,10 +53,6 @@ class one_dim //класс одномерного массива
             kor_array[i] = Math.Abs(array[i]) < 100
                 ? array[i]
                 : int.MinValue;
-
-            
-        //int[] kor_array = new int [kor_len];
-        //return kor_array;
             Print(kor_array)
     }
 
