@@ -83,7 +83,6 @@ class one_dim //класс одномерного массива
     
     public void ReCreate (int len_one_dim, bool fill_rand)
     {
-        array = new int [len_one_dim];
         array = new int[len_one_dim];
 
         if (fill_rand)
