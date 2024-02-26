@@ -5,16 +5,7 @@ class three_dim
 
     public three_dim(int high_three_dim, bool fill_rand)
     {
-        array3 = new int[high_three_dim][];
-
-        if (fill_rand)
-        {
-            three_dim_rand();
-        }
-        else
-        {
-            three_dim_manual();
-        }
+        ReCreate(high_three_dim, fill_rand)
     }
     private void three_dim_rand()
     {       Random rnd = new Random();
@@ -39,6 +30,7 @@ class three_dim
                 }    
             }
         }
+ 
     public void average_three_dim()
     {
         int sum = 0;
@@ -83,8 +75,20 @@ class three_dim
                 
             }
         }
-        
     }
+ public void ReCreate (int high_three_dim, bool fill_rand)
+ {
+     array3 = new int[high_three_dim][];
+
+        if (fill_rand)
+        {
+            three_dim_rand();
+        }
+        else
+        {
+            three_dim_manual();
+        }
+ }
 }
 
 
