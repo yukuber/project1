@@ -31,7 +31,7 @@ class one_dim //класс одномерного массива
 
     public void Print()
     {
-        Print(array)
+        Print(array);
     }
 
     public void average() //вычисление среднего арифметического 
