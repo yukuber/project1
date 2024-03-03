@@ -5,7 +5,16 @@ class three_dim
 
     public three_dim(int high_three_dim, bool fill_rand)
     {
-        ReCreate(high_three_dim, fill_rand)
+        array3 = new int[high_three_dim][];
+
+        if (fill_rand)
+        {
+            three_dim_rand();
+        }
+        else
+        {
+            three_dim_manual();
+        }
     }
     private void three_dim_rand()
     {       Random rnd = new Random();
@@ -22,15 +31,14 @@ class three_dim
             for (int i = 0; i < array3.Length; i++)
             {
                 Console.WriteLine($"Введите длину подмассива {i}");
-                int len_each_three_dim = int.Parse(Console.ReadLine());
+                int len_each_three_dim = Convert.ToInt32(Console.ReadLine());
                 for (int j = 0; j < len_each_three_dim ; j++)
                 {
                     Console.Write($"Элемент [{i}],[{j}]: ");
-                    array3[i][j] = int.Parse(Console.ReadLine());
+                    array3[i][j] = Convert.ToInt32(Console.ReadLine());
                 }    
             }
         }
- 
     public void average_three_dim()
     {
         int sum = 0;
@@ -75,20 +83,8 @@ class three_dim
                 
             }
         }
+        
     }
- public void ReCreate (int high_three_dim, bool fill_rand)
- {
-     array3 = new int[high_three_dim][];
-
-        if (fill_rand)
-        {
-            three_dim_rand();
-        }
-        else
-        {
-            three_dim_manual();
-        }
- }
 }
 
 

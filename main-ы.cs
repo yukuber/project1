@@ -11,7 +11,7 @@ static void Main()
 static void dim_one()
 {
     Console.WriteLine("Введите длину одномерного массива:");
-    int a1 = int.Parse(Console.ReadLine());
+    int a1 = Convert.ToInt32(Console.ReadLine());
 
     bool fill_rand = false;
 
@@ -32,10 +32,10 @@ static void dim_one()
 static void dim_two()
 {
     Console.WriteLine("Введите высоту массива");
-    int high_d2 = int.Parse(Console.ReadLine());
+    int high_d2 = Convert.ToInt32(Console.ReadLine());
 
     Console.WriteLine("Введите длину массивов");
-    int len_d2 = int.Parse(Console.ReadLine());
+    int len_d2 = Convert.ToInt32(Console.ReadLine());
 
     bool fill_rand = false;
 
@@ -54,10 +54,10 @@ static void dim_two()
 static void dim_three()
 {
     Console.WriteLine("Введите высоту массива");
-    int high_d3 = int.Parse(Console.ReadLine());
+    int high_d3 = Convert.ToInt32(Console.ReadLine());
 
     Console.WriteLine("Введите длинe одномерных массивов");
-    int len_d3 = int.Parse(Console.ReadLine());
+    int len_d3 = Convert.ToInt32(Console.ReadLine());
 
     bool fill_rand = false;
 

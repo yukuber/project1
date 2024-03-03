@@ -3,11 +3,19 @@ using System.Linq;
 class one_dim //класс одномерного массива
 {
     private int[] array;
-    private static Random rand = new Random();
 
     public one_dim (int len_one_dim, bool fill_rand)
     {
-        ReCreate(len_one_dim, fill_rand);
+        array = new int[len_one_dim];
+
+        if (fill_rand)
+        {
+            one_dim_rand();
+        }
+        else
+        {
+            one_dim_manual();
+        }
     }
     
     
@@ -24,14 +32,9 @@ class one_dim //класс одномерного массива
         for (int i = 0; i<array.Length; i++)
             {
                 Console.WriteLine($"значение {i}:");
-                int x = int.Parse(Console.ReadLine());
+                int x = Convert.ToInt32(Console.ReadLine());
                 array[i] = x;
             }
-    }
-
-    public void Print()
-    {
-        Print(array);
     }
 
     public void average() //вычисление среднего арифметического 
@@ -41,55 +44,44 @@ class one_dim //класс одномерного массива
         {
             sam+=elem;
         }
-        Console.WriteLine("среднее арифметическое");
+        Console.WriteLine("среднее арифм");
         Console.WriteLine(sam/array.Length);
     }
         
     public int[] pop100() //удаление всех чисел больше 100 по модулю
     {
         Console.WriteLine("укороченный");
+        int kor_len = 0;
         foreach(int elem in array)
         {
-            kor_array[i] = Math.Abs(array[i]) < 100
-                ? array[i]
-                : int.MinValue;
-            Print(kor_array)
-    }
-
-    private static void Print(int[] array)
-    {
-        for (int i = 0; i < array.Length; i++)
-        {
-            if (array[i] == int.MinValue)
+            if (Math.Abs(elem)<=100)
             {
-                continue;
+                kor_len ++;
             }
-            Console.Write($"{array[i]} ")
         }
-        Console.WriteLine();            
+        int[] kor_array = new int [kor_len];
+        return kor_array;
     }
-        
     public int[] non_repeat()
     {
         int[] unique = array.Distinct().ToArray();
 
-        Print(unique);
+       
+        return unique;
     }
-        
-    
-    public void ReCreate (int len_one_dim, bool fill_rand)
+    public void print(int[] array, int[] kor_array, int[] unique)
     {
-        array = new int[len_one_dim];
+        
+        Console.WriteLine("изначальный массив");
+        Console.WriteLine(string.Join(" ", array));
 
-        if (fill_rand)
-        {
-            one_dim_rand();
-        }
-        else
-        {
-            one_dim_manual();
-        }
+
+        Console.WriteLine("только элементы меньше 100");
+        Console.WriteLine(string.Join(" ", kor_array));
+
+        Console.WriteLine("массив без повторений");
+        Console.WriteLine(string.Join(" ", unique));
     }
-    }
+}
 
 
