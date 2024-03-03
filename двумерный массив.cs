@@ -3,22 +3,14 @@ using System;
 class two_dim
 {
     private int[,] array2;
+private static Random rand = new Random();
 
     public two_dim(int high_d2, int len_d2, bool fill_rand)
     {
-        array2 = new int[high_d2, len_d2];
-
-        if (fill_rand)
-        {
-            d2_rand();
-        }
-        else
-        {
-            d2_manual();
-        }
+        ReCreate(high_d2, len_d2, fill_rand);
     }
 
-    private  void d2_rand()
+    private void d2_rand()
     {
         Random rnd = new Random();
         for (int i = 0; i < array2.GetLength(0); i++)
@@ -84,6 +76,19 @@ class two_dim
                     }
                 }
             }
+        }
+    }
+    public void ReCreate(int high_d2, int len_d2, bool fill_rand)
+    {
+        array2 = new int[high_d2, len_d2];
+
+        if (fill_rand)
+        {
+            d2_rand();
+        }
+        else
+        {
+            d2_manual();
         }
     }
 }
