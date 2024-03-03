@@ -1,5 +1,5 @@
 using System;
-using System.Linq;
+
 class one_dim //класс одномерного массива
 {
     private int[] array;
