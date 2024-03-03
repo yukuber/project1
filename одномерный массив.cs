@@ -86,4 +86,4 @@ class one_dim //класс одномерного массива
             one_dim_manual();
         }
     }
-    }
+}
