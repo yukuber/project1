@@ -51,6 +51,7 @@ class one_dim //класс одномерного массива
                 ? array[i]
                 : int.MinValue;
             Print(kor_array)
+        }
     }
 
     private static void Print(int[] array)
